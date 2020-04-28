@@ -16,6 +16,10 @@ aside{
   z-index: 1;
 }
 
+.logo{
+  background-color: #D30C5C;
+}
+
 .controle{
   z-index: 1;
   cursor: pointer;

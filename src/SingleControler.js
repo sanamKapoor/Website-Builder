@@ -44,7 +44,7 @@ export default class SingleControler extends Component {
     let classes = show ? "col-3 fas fa-2x fa-angle-up text-center" : "col-3 fas fa-2x fa-angle-down text-center";
     return (
       <div className="m-2 border-bottom">
-      <div className="row mx-auto ">
+      <div className="row mx-auto text-light">
         <p className="col-9 lead">{this.props.name}</p> 
         <i style={{cursor: 'pointer'}} className={classes} onClick={() => this.handleClick()}></i>
       </div>

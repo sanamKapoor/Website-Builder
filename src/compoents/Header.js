@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Header01() {
   return (
-    <div className="header-1 bg-primary">
+    <div className="header-1 bg-info">
   <nav className="navbar navbar-expand navbar-dark bg-transparent mx-auto px-2 px-sm-3 px-md-5">
     <a className="navbar-brand" href="/">Alex.com</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
