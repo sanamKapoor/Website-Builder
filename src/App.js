@@ -8,9 +8,7 @@ import Controler from './Controler';
 
 class App extends React.Component {
 
-  constructor(){
-    super();
-    this.state = {
+    state = {
       open: true,
       edit: false,
       all: new Map(),
@@ -18,7 +16,6 @@ class App extends React.Component {
       components: ['Header', 'Landing', 'Article', 'Section', 'Footer'],
       final: '',
     }
-  }
 
 controlDashboard = (isOpen) => {
 
@@ -32,7 +29,7 @@ let main = document.querySelector('main');
 
   if(isOpen){
 
-    if(window.innerWidth > 1200){
+    if(window.innerWidth > 1250){
       aside.style.display = 'flex';
       aside.style.width = '350px';
       aside.style.height = '100vh';
@@ -68,7 +65,7 @@ let main = document.querySelector('main');
     
   } else {
 
-    if(window.innerWidth > 1200){
+    if(window.innerWidth > 1250){
       aside.style.position  = 'absolute';
       aside.style.top = '0px';
       aside.style.left = '-350px';
@@ -106,7 +103,7 @@ let main = document.querySelector('main');
   }
 
   widthControle = (e) =>{
-      window.innerWidth < 1200 ? e.controlDashboard(true) : console.log('large')
+      window.innerWidth < 1200 && e.controlDashboard(true) 
   }
 
   controleClick = (open) => {
@@ -204,8 +201,8 @@ let main = document.querySelector('main');
 
   return (
     <React.Fragment>
-      <div className="controle">
-        <i className="fas fa-caret-right fa-1x px-1 py-3 bg-light" onClick={() => this.controleClick(open)}></i>
+      <div className="controle border rounded shadow">
+        <i className="fas fa-caret-right fa-1x px-1 bg-light" onClick={() => this.controleClick(open)}></i>
       </div>
       <Controler componentFun={this.componentName} done={() => this.controleClick(open)} next={this.view} selected={all} />
       <main>
@@ -218,7 +215,7 @@ let main = document.querySelector('main');
           </React.Fragment>
           :
           <div id="start" className="bg-secondary text-center d-flex justify-content-center align-items-center">
-            <h5 className="text-light">Click on the arrow button and start building the website.</h5>
+            <h6 className="text-light mx-2">Click on the arrow button and start building the website.</h6>
           </div>        
         }
       </main>

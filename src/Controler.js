@@ -62,12 +62,11 @@ export default class Controler extends Component {
     let { next, stay } = this.state;
     return (
       <aside className="bg-dark text-light">
-    <div>
-    <h5 className="logo text-light text-center p-3">SITE GENERATOR</h5>
-    <p className="text-center p-2">Get your website ready within few minutes by just clicking some options.</p>
-    <hr className="bg-light" />
-    <div className="components">
-
+    <div className="text-center">
+    <h5 className="logo shadow p-2 text-uppercase">Site Builder</h5>
+    <span className="">Get your website ready with just few clicks.</span>
+    <hr className="bg-light my-2" />
+    <div className="components text-left">
       { 
       (this.elements.length >= 0)
       ? 
@@ -79,15 +78,16 @@ export default class Controler extends Component {
     </div>
   </div>
 
-    <div className="bg-dark text-light">
-      <p className="text-center pt-2">
+    <div className="mt-3 py-1 text-center">
+      <p className="my-1">
         {this.elements.length > 0 ? 'Press the button for next component.' : 'Congrats! Your website is ready.'}
       </p>
-      <button className="btn btn-light btn-block mx-auto w-75 mb-3 align-self-center text-center"
+      <button className="btn btn-light btn-sm d-block mx-auto w-75 align-self-center" 
       onClick={(e) => this.nextComponent(true, e)}
       >
         {this.elements.length > 0 ? 'Next' : "Let's Finish"}
       </button>
+        <small className="py-2">Made with <span role="img" aria-label="heart">❤️</span> by Sanam Kapoor</small>
     </div>
   </aside>
     )

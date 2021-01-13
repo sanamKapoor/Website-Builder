@@ -10,18 +10,37 @@ body{
 aside{
   width: 350px;
   height: 100vh;
+  overflow: auto;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 50;
+}
+
+aside::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+aside::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+aside::-webkit-scrollbar-thumb {
+  background-color: transparent;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid rgba(66, 65, 65, 0.075);  /* creates padding around scroll thumb */
+}
+
+.components{
+  display: block;
 }
 
 .logo{
-  background-color: #D30C5C;
+  color: #D30C5C;
 }
 
 .controle{
-  z-index: 1;
+  z-index: 10;
+  margin-left: -3px;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -36,8 +55,16 @@ main{
   overflow-x: hidden;
 }
 
+.header-1, .header-2{
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .carousel, .c-img{
   height: 70vh;
+  z-index: 1;
 }
 
 .c-item-01{
@@ -56,6 +83,10 @@ main{
   background: url('./img/pexels-photo-583845.jpeg') no-repeat center center;
   background-size: cover;
   height: 70vh;
+}
+
+.carousel-caption{
+  z-index: 1;
 }
 
 .landing{
@@ -88,22 +119,34 @@ main{
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
 
-
 h1 {
   font-size: 3.5rem;
 }
 
-.section-01 div, .section-03, .section-04{
+h2{
+  font-size: 1.7rem;
+}
+
+.section-01 div, .section-03, .section-02, .section-04{
   width: 80%;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
+}
+
+.section-01-img{
+  max-height: 330px;
+  min-height: 130px;
+  width: 100%;
 }
 
 .section-02{
-  width: 80%;
-  margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 2rem;
+}
+
+.section-02-img{
+  max-height: 300px;
+  display: block;
 }
 
 .hidden-p{
@@ -118,7 +161,7 @@ h1 {
 .section-03{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  grid-column-gap: 2rem;
 }
 
 .section-03 div{
@@ -126,42 +169,28 @@ h1 {
 }
 
 .product-row{
+  width: 100%;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3rem;
 }
 
+.course-img{
+  min-height: 130px;
+  max-height: 300px;
+  width: 100%;
+}
+
+footer{
+  margin-top: 2rem;
+}
+
 .footer-row{
-  width: 80vw;
+  width: 80%;
 }
 
-@media screen and (max-width: 1500px){
-  
-  .landing-txt{
-    width: 75%;
-    margin: 0 auto;
-  }
-
-  h1{
-    font-size: 3rem;
-  }
-
-  .section-01 div, .section-02, .section-03, .section-04{
-    width: 90%;
-    margin: 1.5rem auto;
-  }
-
-  .product-row{
-    grid-gap: 2rem;
-  }
-
-  .footer-row{
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 1200px){
-  
+@media (max-width: 1250px){
   aside{
     display: none;
   }
@@ -170,19 +199,22 @@ h1 {
     height: auto;
     overflow-y: visible;
   }
+}
 
+@media screen and (max-width: 1200px){
+  
   h1{
     font-size: 2.7rem;
+  }
+
+  h2{
+    font-size: 1.5rem;
   }
 
   .product-list{
     display: none;
   }
   
-  .section-02{
-    grid-template-columns: 1fr;
-  }
-
   .section-03{
     grid-gap: 1rem;
   }
@@ -194,9 +226,19 @@ h1 {
   .product-row{
     grid-gap: 1rem;
   }
+
 }
 
 @media screen and (max-width: 1000px){
+
+  .section-01 div, .section-02, .section-03, .section-04{
+    width: 90%;
+  }
+
+  .section-03{
+    grid-gap: 0.6rem;
+  }
+
   .carousel, .c-img{
     height: 60vh;
   }
@@ -240,21 +282,74 @@ h1 {
   h1{
     font-size: 2.5rem;
   }
+
+  .footer-row{
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 700px){
-  .section-03, .product-row{
-    grid-template-columns: 1fr;
-    grid-gap: 1.5rem;
+  .section-01 div, .section-02, .section-03, .section-04{
+    width: 80%;
   }
 
-  .product-row-02{
+  h2{
+    font-size: 1.3rem;
+  }
+
+  .section-03, .product-row{
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+  }
+
+  .section-03 div {
+    border-radius: 8px;
+  }
+
+  .section-02{
+    grid-template-columns: 1fr;
+  }
+
+  .section-02-img{
     display: none;
   }
+
 }
 
 @media screen and (max-width: 500px){
+  
   h1{
     font-size: 2rem;
   }
+
+  p, li{
+    font-size: 0.9rem;
+  }
+
+  .section-01 div, .section-02, .section-03, .section-04{
+    width: 90%;
+  }
+
+  .section-03 div{
+    border-radius: 6px;
+  }
+
+  .footer-row{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  h1{
+    font-size: 1.5rem;
+  }
+
+  h2{
+    font-size: 1.2rem;
+  }
+
+  p, li{
+    font-size: 0.8rem;
+  }
+
 }

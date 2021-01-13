@@ -2,23 +2,23 @@ import React from 'react'
 
 export function Section01() {
   return (
-<section className="section-02">
-    <div className="p-3">
-      <h2 className="my-3">Development and Marketing</h2>
-      <p>Online platforms intermediate information and communication flows on the Internet. They are also key enablers of digital trade across the Single Market and the globe. They increase consumer choice and convenience, improve efficiency and competitiveness of industry and can enhance civil participation in society.</p>
-      <p>Internet marketing is important because it aligns with the way consumers make purchasing decisions. Studies by analysts such as Gartner indicate that increasing numbers of consumers use social media and research on mobile Internet to carry out preliminary product and price research before making final decisions.
+<section class="section-02">
+    <div class="px-2 px-sm-3">
+      <h2 class="my-2 my-md-3">Our Popular Courses</h2>
+      <p>
+        You don't have to worry now, beacuse we come up with our popular courses only for you.
       </p>
-    </div>
-    <div className="p-3 text-center bg-warning product-list align-self-center">
-      <h3 className="my-3">Our Popular Courses</h3>
-      <ul className="list-unstyled">
-        <li className="h6">Wordpress Development</li>
-        <li className="h6">Web Design and Development</li>
-        <li className="h6">App Development</li>
-        <li className="h6">Afiliate Marketing</li>
-        <li className="h6">SEO and Google Ads</li>
-        <li className="h6">Adobe XD and OpenShot</li>
+      <ul class="list-unstyled p-0 m-md-2">
+        <li><i class="far fa-check-circle mr-2"></i> Wordpress Development</li>
+        <li><i class="far fa-check-circle mr-2"></i> Web Design</li>
+        <li><i class="far fa-check-circle mr-2"></i> App Development</li>
+        <li><i class="far fa-check-circle mr-2"></i> Afiliate Marketing</li>
+        <li><i class="far fa-check-circle mr-2"></i> SEO and Google Ads</li>
+        <li><i class="far fa-check-circle mr-2"></i> Content Writing</li>
       </ul>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <img src="./img/1407916-young-businessman-png-jpg-black-and-white-stock-young-person-png-428_495_preview.png" class="img-fluid section-02-img" alt="" />
     </div>
 </section>
   )
@@ -28,80 +28,31 @@ export function Section01() {
 
 export function Section02(){
   return(
-  <div className="section-04">
-  <h2 className="text-center">Our Popular Courses</h2>
-  <div className="product-row pt-3">
-    <div className="card bg-light">
-      <img src="https://cms-assets.tutsplus.com/uploads/users/71/courses/1274/preview_image/introduction-to-wordpress-plugin-development-400x277.png" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">Wordpress Development</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
+    <div class="section-04">
+    <h2 class="text-center">Our Courses</h2>
+    <div class="product-row pt-2 pt-sm-3">
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/Earning-Passive-Income.jpg" class="img-fluid course-img" alt="" />
       </div>
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/feed_webdesign-1.jpg" class="img-fluid course-img" alt="" />
       </div>
-    </div>
-    <div className="card bg-light">
-      <img src="https://sitegalleria.com/wp-content/uploads/2019/08/Web-Development-and-Web-Design-Company.png" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">Web Design and Development</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
-      </div>
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/o-que-e-seo-blog-hostgator.jpg" class="img-fluid course-img" alt="" />
       </div>
     </div>
-    <div className="card bg-light">
-      <img src="https://miro.medium.com/max/1838/1*JUSbO0xkXPf2jtYLMSAZ8w.jpeg" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">App Development</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
+  
+    <div class="product-row pt-2 pt-sm-3 product-row-02">
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/how-to-get-started-with-wordpress_pccv.jpg" class="img-fluid course-img" alt="" />
       </div>
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/1_ZnVbmWK9nAothEg_de2fOA.jpeg" class="img-fluid course-img" alt="" />
+      </div>
+      <div class="p-2 shadow bg-light d-flex">
+        <img src="./img/177798-1-Tips-for-best-content-writing.jpg" class="img-fluid course-img" alt="" />
       </div>
     </div>
   </div>
-
-  <div className="product-row pt-4 product-row-02">
-    <div className="card bg-light">
-      <img src="https://www.amazingviralnews.com/wp-content/uploads/2020/01/affiliate-marketing-approach-854x540.jpg" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">Afiliate Marketing</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
-      </div>
-      </div>
-    </div>
-    <div className="card bg-light">
-      <img src="https://sanaluzman.cdnnew.com//sanaluzman/BlogFiles/3105/google_05052017020908.jpg" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">SEO and Google Ads</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
-      </div>
-      </div>
-    </div>
-    <div className="card bg-light">
-      <img src="https://www.learnupon.com/wp-content/uploads/Video-editing-basics-for-eLearning1200x628.jpg" height="250" alt="" />
-      <div className="row">
-        <div className="col-10">
-          <p className="lead m-2">Adobe XD and OpenShot</p>
-        </div>
-      <div className="col-2">
-        <i className="text-danger far fa-2x fa-heart float-right m-2"></i>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-
   )
 }

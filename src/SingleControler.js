@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class SingleControler extends Component {
-  constructor(){
-    super();
-    this.state = {
+    state = {
       show: true,
       selectedValue: '',
       color: '',
       isColored: false
     }
-  }
 
   componentWillMount(){
     this.setState({
@@ -41,29 +38,22 @@ export default class SingleControler extends Component {
   render() {
     let { show, color } = this.state;
     
-    let classes = show ? "col-3 fas fa-2x fa-angle-up text-center" : "col-3 fas fa-2x fa-angle-down text-center";
+    let classes = show ? "col-3 fas fa-1x fa-angle-up align-self-center" : "col-3 fas fa-1x fa-angle-down align-self-center";
     return (
-      <div className="m-2 border-bottom">
-      <div className="row mx-auto text-light">
-        <p className="col-9 lead">{this.props.name}</p> 
+      <div className="mx-2 my-1 border-bottom">
+      <div className="row mx-auto text-light my-2">
+        <h5 className="col-9">{this.props.name}</h5> 
         <i style={{cursor: 'pointer'}} className={classes} onClick={() => this.handleClick()}></i>
       </div>
       {
         show ?
         (
-          <div className="row mx-auto">
+          <div className="row mx-auto my-0">
             {
               this.props.elements.map((el, index) => {
               return(
-              <div className="col-6" key={index}>
-                <p className={color === el ? 'text-danger' : 'text-light'}>
-                <input 
-                  className="mx-2"
-                  style={{cursor: 'pointer'}}
-                  type="radio" 
-                  name="selectedValue"
-                  value={el}
-                  onChange={(e) => this.props.componentFun(this.props.name, e.target.value)}></input>
+              <div className="col-6 text-center" key={index}>
+                <p className={color === el ? 'bg-danger border border-danger rounded py-1' : 'text-light border border-light rounded py-1'} style={{cursor: 'pointer'}} onClick={() => this.props.componentFun(this.props.name, el)}>
                   {el}
                 </p>
               </div>

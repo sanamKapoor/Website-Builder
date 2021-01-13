@@ -2,19 +2,19 @@ import React from 'react'
 
 export function Footer01() {
   return (
-    <footer className="bg-dark text-light">
-  <div className="row p-4 footer-row mx-auto">
-    <div className="col-12 col-md-7">
-    <h3>Join Now</h3>
+<footer class="bg-dark text-light">
+  <div class="row p-2 p-sm-4 footer-row mx-auto">
+    <div class="col-12 col-md-7">
+    <h2>Join Now</h2>
     <p>We hope you got some useful information and have decided which one you will choose. You can enrol with our courses if you think so. Best of luck for you learning!</p>
     </div>
-    <div className="col-12 col-md-5 text-center my-4">
+    <div class="col-12 col-md-5 text-center my-4">
     <div>
-      <i className="fa-2x mx-2 fab fa-facebook"></i>
-      <i className="fa-2x mx-2 fab fa-twitter"></i>
-      <i className="fa-2x mx-2 fab fa-youtube"></i>
+      <i class="fa-2x mx-2 fab fa-facebook"></i>
+      <i class="fa-2x mx-2 fab fa-twitter"></i>
+      <i class="fa-2x mx-2 fab fa-youtube"></i>
     </div>
-    <p className="my-2">Copyright &copy; 2020 alex.com</p>
+    <p class="my-2">Copyright &copy; 2020 alex.com</p>
     </div>
   </div>
 </footer>
@@ -35,10 +35,10 @@ export function Footer02() {
     </div>
     <div className="col-12 col-sm-4 text-center">
       <ul className="list-unstyled">
-        <li>Disclamer</li>
-        <li>Terms and Conditions</li>
         <li>About</li>
         <li>Contact</li>
+        <li>Disclamer</li>
+        <li>Terms</li>
       </ul>
     </div>
     <div className="col-12 col-sm-4 text-center">
@@ -49,7 +49,7 @@ export function Footer02() {
         <li>Youtube</li>
       </ul>
     </div>
-  <p className="w-100 text-center lead">Copyright &copy; 2020 alex.com</p>
+  <p className="w-100 text-center mt-2">Copyright &copy; 2020 alex.com</p>
 
   </div>
 </footer>
