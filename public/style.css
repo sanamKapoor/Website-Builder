@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
@@ -10,28 +11,34 @@ body{
 aside{
   width: 350px;
   height: 100vh;
-  overflow: auto;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 50;
+  overflow: hidden;
 }
 
-aside::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
-}
-aside::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
-}
-aside::-webkit-scrollbar-thumb {
-  background-color: transparent;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 2px solid rgba(66, 65, 65, 0.075);  /* creates padding around scroll thumb */
-}
-
-.components{
+.components-controler{
   display: block;
+  overflow: auto;
 }
+
+.components-controler::-webkit-scrollbar {
+  width: 3px;               /* width of the entire scrollbar */
+}
+.components-controler::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);        /* color of the tracking area */
+}
+.components-controler::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.05);    /* color of the scroll thumb */
+  border-radius: 15px;       /* roundness of the scroll thumb */
+  border: 2px solid rgba(0, 0, 0, 0.09);  /* creates padding around scroll thumb */
+}
+
 
 .logo{
   color: #D30C5C;
@@ -40,8 +47,17 @@ aside::-webkit-scrollbar-thumb {
 .controle{
   z-index: 10;
   margin-left: -3px;
-  overflow: hidden;
+  /* overflow: hidden; */
   cursor: pointer;
+}
+
+.small-controler-btn{
+  display: none;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  z-index: 60;
 }
 
 #start{
@@ -51,7 +67,7 @@ aside::-webkit-scrollbar-thumb {
 main{
   width: auto;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -127,6 +143,10 @@ h2{
   font-size: 1.7rem;
 }
 
+h5{
+  font-size: 1.2rem;
+}
+
 .section-01 div, .section-03, .section-02, .section-04{
   width: 80%;
   margin: 1rem auto;
@@ -191,8 +211,21 @@ footer{
 }
 
 @media (max-width: 1250px){
+
   aside{
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+  }
+
+  .controle{
     display: none;
+  }
+
+  .small-controler-btn{
+    display: inline;
   }
 
   main{
@@ -289,12 +322,22 @@ footer{
 }
 
 @media screen and (max-width: 700px){
+
+  .small-controler-btn{
+    right: 3%;
+    bottom: 3%;
+  }
+
   .section-01 div, .section-02, .section-03, .section-04{
     width: 80%;
   }
 
   h2{
     font-size: 1.3rem;
+  }
+
+  h5{
+    font-size: 1rem;
   }
 
   .section-03, .product-row{

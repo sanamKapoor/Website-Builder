@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Article01() {
+export function Content() {
   return (
     <section className="section-01">
   <div className="row">
@@ -17,7 +17,7 @@ export function Article01() {
   )
 }
 
-export function Article02(){
+export function Cards(){
   return(
     <div className="section-03">
   <div className="text-center p-3 my-md-3 border border-danger text-danger">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Header01() {
+export function Full() {
   return (
     <div className="bg-secondary">
         <div className="container py-2">
@@ -19,7 +19,7 @@ export function Header01() {
   )
 }
 
-export function Header02(){
+export function Small(){
   return(
     <div className="header-2 container py-2">
       <div className="row">

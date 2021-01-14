@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header01, Header02 } from './compoents/Header';
-import { Landing01, Landing02, Landing03 } from './compoents/Landing';
-import { Section01, Section02 } from './compoents/Section';
-import { Article01, Article02 } from './compoents/Article';
-import { Footer01, Footer02 } from './compoents/Footer';
+import { Full, Small } from './compoents/NavBar';
+import { Carousel , Centered, Half  } from './compoents/Headline';
+import { Checkpoint, Images } from './compoents/Section';
+import { Content, Cards } from './compoents/Article';
+import { Text, Links } from './compoents/Footer';
 import Controler from './Controler';
 
 class App extends React.Component {
@@ -13,29 +13,34 @@ class App extends React.Component {
       edit: false,
       all: new Map(),
       status: false,
-      components: ['Header', 'Landing', 'Article', 'Section', 'Footer'],
+      components: ['NavBar', 'Headline', 'Service', 'Courses', 'Footer'],
       final: '',
+      displaySmallControler: false
     }
 
 controlDashboard = (isOpen) => {
 
-isOpen = isOpen ? this.state.open : false;
-      
-let controle = document.querySelector('.controle');
-let icon = document.querySelector('.controle i');
+  isOpen = isOpen ? this.state.open : false;
+        
+  let controle = document.querySelector('.controle');
+  let icon = document.querySelector('.controle i');
+  let controlerSection = document.querySelector('.components-controler');
 
-let aside = document.querySelector('aside');
-let main = document.querySelector('main');
-
-  if(isOpen){
+  let aside = document.querySelector('aside');
+  let main = document.querySelector('main');
 
     if(window.innerWidth > 1250){
+      if(isOpen){
       aside.style.display = 'flex';
+      aside.style.flexFlow = 'column';
+      aside.style.justifyContent = 'space-between';
+      aside.style.alignItems = 'stretch';
       aside.style.width = '350px';
       aside.style.height = '100vh';
       aside.style.position  = 'absolute';
-      aside.style.top = '0px';
-      aside.style.left = '0px';
+      aside.style.top = '0';
+      aside.style.left = '0';
+      controlerSection.style.overflow = 'auto';
 
       controle.style.position = 'absolute';
       controle.style.top = '50vh';
@@ -44,32 +49,10 @@ let main = document.querySelector('main');
 
       icon.classList = '';
       icon.className = 'fas fa-caret-left fa-1x px-2 py-4 bg-light';
-    } 
-    else {
-      aside.style.display = 'block';
-        aside.style.height =  'auto';
-        aside.style.width = '100vw';
-        aside.style.position  = 'absolute';
-        aside.style.left = '0px';
-        aside.style.right = '0px';
-        aside.style.top = '0px';
-        main.style.marginTop = `${aside.clientHeight}px`;
-  
-        controle.style.position = 'absolute';
-        controle.style.top = `${aside.clientHeight}px`;
-        controle.style.left = '45vw';
-  
-        icon.classList = '';
-        icon.className = 'fas fa-caret-up fa-1x px-4 py-1 bg-light';
-    }
-    
-  } else {
-
-    if(window.innerWidth > 1250){
-      aside.style.position  = 'absolute';
-      aside.style.top = '0px';
-      aside.style.left = '-350px';
+    } else {
+      aside.style.display = 'none';
       main.style.marginLeft = '0px';
+      main.style.display = 'block';
 
       controle.style.position = 'absolute';
       controle.style.top = '50vh';
@@ -78,16 +61,43 @@ let main = document.querySelector('main');
       icon.classList = '';
       icon.className = 'fas fa-caret-right fa-1x px-2 py-4 bg-light';
     }
-    else {
-      aside.style.display = 'none';
-  
-        controle.style.position = 'absolute';
-        controle.style.top = '0px';
-        controle.style.left = '45vw';
-        main.style.marginTop = '0px';
-  
+    
+  } 
+  else {
+
+    let icon = document.querySelector('small-controler-btn i');
+
+    if(isOpen){
+      aside.style.display = 'flex';
+      aside.style.flexFlow = 'column';
+      aside.style.justifyContent = 'center';
+      aside.style.alignItems = 'center';
+      aside.style.width = '100vw';
+      aside.style.height = '100vh';
+      aside.style.position = 'absolute';
+      aside.style.top = '0';
+      aside.style.left = '0';
+      aside.style.right = '0';
+      aside.style.bottom = '0';
+
+      controlerSection.style.overflow = 'auto';
+      main.style.display = 'none';
+
+      if(icon){
         icon.classList = '';
-        icon.className = 'fas fa-caret-down fa-1x px-4 py-1 bg-light';
+        icon.style.className = 'fas fa-times';
+      }
+    
+    } else {
+      aside.style.display = 'none';
+      main.style.display = 'block';
+      main.style.marginLeft = '0px';
+
+      if(icon){
+        icon.classList = '';
+        icon.style.className = 'fas fa-caret-up';
+      }
+      
     }
   }
 
@@ -95,16 +105,14 @@ let main = document.querySelector('main');
 
   componentDidMount(){
     this.controlDashboard();
-    window.addEventListener('resize', () => this.controlDashboard());
+    window.addEventListener('resize', () => {
+      this.controlDashboard();
+      this.setState({
+        open: true
+      })
+    });
   }
 
-  componentDidUpdate(){
-    this.widthControle(this);
-  }
-
-  widthControle = (e) =>{
-      window.innerWidth < 1200 && e.controlDashboard(true) 
-  }
 
   controleClick = (open) => {
     this.controlDashboard(open); 
@@ -152,38 +160,31 @@ let main = document.querySelector('main');
   }
 
   component = (v) => {
-    if(v === 'Header01'){
-      return <Header01 />
-    }
-    if(v === 'Header02'){
-      return <Header02 />
-    }
-    if(v === 'Landing01'){
-      return <Landing01 />
-    }
-    if(v === 'Landing02'){
-      return <Landing02 />
-    }
-    if(v === 'Landing03'){
-      return <Landing03 />
-    }
-    if(v === 'Article01'){
-      return <Article01 />
-    }
-    if(v === 'Article02'){
-      return <Article02 />
-    }
-    if(v === 'Section01'){
-      return <Section01 />
-    }
-    if(v === 'Section02'){
-      return <Section02 />
-    }
-    if(v === 'Footer01'){
-      return <Footer01 />
-    }
-    if(v === 'Footer02'){
-      return <Footer02 />
+    switch(v){
+      case 'Full':
+        return <Full key="N1" />
+      case 'Small':
+        return <Small key="N2" />
+      case 'Carousel ':
+        return <Carousel key="H1" />
+      case 'Centered':
+        return <Centered key="H2" />
+      case 'Half ':
+        return <Half key="H3" />
+      case 'Content':
+        return <Content key="S1" />
+      case 'Cards':
+        return <Cards key="S2" />
+      case 'Checkpoint':
+        return <Checkpoint key="C1" />
+      case 'Images':
+        return <Images key="C2" />
+      case 'Text':
+        return <Text key="F1" />
+      case 'Links':
+        return <Links key="F2" />
+      default:
+        return ''
     }
   }
 
@@ -196,11 +197,17 @@ let main = document.querySelector('main');
     return Arr;
   }
 
+
   render(){
   let { open, edit, all, final } = this.state;
 
   return (
     <React.Fragment>
+      <div className="small-controler-btn shadow bg-light py-2 px-3 rounded-circle" onClick={() => this.controleClick(open)}>
+        {
+          !open ? <i className="fas fa-times"></i> : <i className="fas fa-caret-up"></i>
+        }
+      </div>
       <div className="controle border rounded shadow">
         <i className="fas fa-caret-right fa-1x px-1 bg-light" onClick={() => this.controleClick(open)}></i>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Landing01() {
+export function Carousel () {
   return (
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
@@ -40,7 +40,7 @@ export function Landing01() {
   )
 }
 
-export function Landing02(){
+export function Centered(){
   return(
     <div className="landing text-light d-flex flex-column justify-content-center align-items-center">
   <div className="d-flex flex-column justify-content-center align-items-center landing-txt">
@@ -54,7 +54,7 @@ export function Landing02(){
   )
 }
 
-export function Landing03(){
+export function Half (){
   return(
     <div className="clip-area text-light">
     <div className="clip-txt d-flex justify-content-center align-items-center">

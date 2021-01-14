@@ -8,25 +8,28 @@ export default class SingleControler extends Component {
       isColored: false
     }
 
-  componentWillMount(){
+  componentDidMount(){
     this.setState({
       isColored: this.props.stay
     })
   }
 
-  componentWillReceiveProps(){
-    let selected = this.props.selected;
-    let all = this.props.elements;
+  componentDidUpdate(prevProp){
+    if(this.props !== prevProp){
+      let selected = this.props.selected;
+      let all = this.props.elements;
 
-    selected.forEach(el => {
-       all.filter(e => {
-          if(el === e && this.state.isColored){
-              this.setState({
-                color: e,
-              })
-          } 
+      selected.forEach(el => {
+        all.filter(e => {
+            if(el === e && this.state.isColored){
+                this.setState({
+                  color: e,
+                })
+            } 
+            return null;
+        })
       })
-    })
+    }
   }
 
   handleClick = () => {
@@ -53,7 +56,7 @@ export default class SingleControler extends Component {
               this.props.elements.map((el, index) => {
               return(
               <div className="col-6 text-center" key={index}>
-                <p className={color === el ? 'bg-danger border border-danger rounded py-1' : 'text-light border border-light rounded py-1'} style={{cursor: 'pointer'}} onClick={() => this.props.componentFun(this.props.name, el)}>
+                <p className={color === el ? 'bg-danger border border-danger rounded py-0 py-md-1' : 'text-light border border-light rounded py-0 py-md-1'} style={{cursor: 'pointer'}} onClick={() => this.props.componentFun(this.props.name, el)}>
                   {el}
                 </p>
               </div>
