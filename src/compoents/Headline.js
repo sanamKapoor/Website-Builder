@@ -54,7 +54,7 @@ export function Centered(){
   )
 }
 
-export function Half (){
+export function Gradient (){
   return(
     <div className="clip-area text-light">
     <div className="clip-txt d-flex justify-content-center align-items-center">

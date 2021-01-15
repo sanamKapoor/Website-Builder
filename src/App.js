@@ -1,6 +1,6 @@
 import React from 'react';
 import { Full, Small } from './compoents/NavBar';
-import { Carousel , Centered, Half  } from './compoents/Headline';
+import { Carousel , Centered, Gradient  } from './compoents/Headline';
 import { Checkpoint, Images } from './compoents/Section';
 import { Content, Cards } from './compoents/Article';
 import { Text, Links } from './compoents/Footer';
@@ -169,8 +169,8 @@ controlDashboard = (isOpen) => {
         return <Carousel key="H1" />
       case 'Centered':
         return <Centered key="H2" />
-      case 'Half ':
-        return <Half key="H3" />
+      case 'Gradient ':
+        return <Gradient key="H3" />
       case 'Content':
         return <Content key="S1" />
       case 'Cards':
@@ -203,7 +203,7 @@ controlDashboard = (isOpen) => {
 
   return (
     <React.Fragment>
-      <div className="small-controler-btn shadow bg-light py-2 px-3 rounded-circle" onClick={() => this.controleClick(open)}>
+      <div className="small-controler-btn shadow border bg-light py-2 px-3 rounded-circle" onClick={() => this.controleClick(open)}>
         {
           !open ? <i className="fas fa-times"></i> : <i className="fas fa-caret-up"></i>
         }

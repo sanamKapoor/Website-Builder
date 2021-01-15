@@ -8,7 +8,7 @@ const elements = [
   },
   {
     name: 'Headline',
-    components: ['Carousel ', 'Centered', 'Half ']
+    components: ['Carousel ', 'Centered', 'Gradient ']
   },
   {
     name: 'Service',
@@ -75,7 +75,7 @@ export default class Controler extends Component {
       </div>
     </div>
 
-    <div className="mt-1 mt-md-2 mt-lg-3 py-1 text-center">
+    <div className="mt-1 mt-md-2 mt-lg-3 py-1 text-center controler-bootom-area">
       <p className="my-1">
         {elements.length > 0 ? 'Press the button for next component.' : 'Congrats! Your website is ready.'}
       </p>

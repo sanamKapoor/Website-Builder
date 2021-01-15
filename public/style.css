@@ -228,6 +228,10 @@ footer{
     display: inline;
   }
 
+  .components-controler, .controler-bootom-area{
+    width: 60vw;
+  }
+
   main{
     height: auto;
     overflow-y: visible;
@@ -263,6 +267,10 @@ footer{
 }
 
 @media screen and (max-width: 1000px){
+
+  .components-controler, .controler-bootom-area{
+    width: 70vw;
+  }
 
   .section-01 div, .section-02, .section-03, .section-04{
     width: 90%;
@@ -323,6 +331,10 @@ footer{
 
 @media screen and (max-width: 700px){
 
+  .components-controler, .controler-bootom-area{
+    width: 80vw;
+  }
+
   .small-controler-btn{
     right: 3%;
     bottom: 3%;
@@ -361,6 +373,10 @@ footer{
 
 @media screen and (max-width: 500px){
   
+  .components-controler, .controler-bootom-area{
+    width: 100vw;
+  }
+
   h1{
     font-size: 2rem;
   }
