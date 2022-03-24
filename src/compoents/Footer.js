@@ -6,7 +6,7 @@ export function Text() {
   <div className="row p-2 p-sm-4 footer-row mx-auto">
     <div className="col-12 col-md-7">
     <h2>Join Now</h2>
-    <p>We hope you got some useful information and have decided which one you will choose. You can enrol with our courses if you think so. Best of luck for you learning!</p>
+    <p>We hope you got some useful information and have decided which one you will choose. You can enrol with our courses if you think so. Best of luck for your learning!</p>
     </div>
     <div className="col-12 col-md-5 text-center my-4">
     <div>

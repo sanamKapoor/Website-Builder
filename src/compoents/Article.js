@@ -5,7 +5,7 @@ export function Content() {
     <section className="section-01">
   <div className="row">
     <div className="col-12 col-md-4 align-self-center">
-      <img src="./img/Canva-Person-Using-Macbook-Pro.jpg" className="img-fluid section-01-img" alt="" />
+      <img src="./img/Person-Using-Macbook-Pro.jpg" className="img-fluid section-01-img" alt="" />
     </div>
     <div className="col-12 col-md-8 align-self-center px-2">
       <h2 className="mb-2">Digital Marketing</h2>
